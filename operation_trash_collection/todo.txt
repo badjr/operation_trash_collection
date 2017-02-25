@@ -1,0 +1,8 @@
+use //https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=33.96266807,-84.36111539&radius=500&type=transit_station&keyword=marta&key=AIzaSyCsUDTqJPhwahDQ_4sCxlibL-zrNQNj314 to get closest marta station
+
+make a getTrashReports select from mysql database and return json list of rows
+
+make web page that makes http get request to localhost:8081/getTrashReports to get list of reports and populate a Google map
+
+maps api key = AIzaSyBynt9iySs_VTFTPdFYwwmiSEjUxfxkhuQ
+places api key = AIzaSyCsUDTqJPhwahDQ_4sCxlibL-zrNQNj314

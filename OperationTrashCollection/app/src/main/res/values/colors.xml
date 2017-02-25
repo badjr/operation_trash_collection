@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="martaOrange">#f27421</color>
+    <color name="martaYellow">#f9b714</color>
+    <color name="martaBlue">#0f83c0</color>
+</resources>

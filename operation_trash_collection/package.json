@@ -1,0 +1,13 @@
+{
+  "name": "operation_trash_collection",
+  "version": "1.0.0",
+  "description": "Operation Trash Collection",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "badjr",
+  "license": "ISC"
+}
