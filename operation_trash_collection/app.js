@@ -61,8 +61,41 @@ app.post('/reportTrash', function(req, res) {
 	connection.end();
 });
 
-var express = require('express');
-var app = express();
+app.get('/getTrashReports', function(req, res) {
+	var mysql      = require('mysql');
+	var connection = mysql.createConnection({
+		host     : 'localhost',
+		user     : 'trash_collector',
+		password : '123',
+		database : 'operation_trash_collection'
+	});
+
+	connection.connect();
+	
+	var lat = req.body.latitude;
+	var long = req.body.longitude;
+	connection.query('select * from trash_reports;', function(err, rows, fields) {
+		if (!err) {
+			console.log('The solution is: ', rows);
+			res.setHeader('Content-Type', 'application/json');
+			res.send( rows );
+			//res.status(200);
+		}
+		else {
+			console.log('Error while performing Query.');
+			res.status(500);
+		}
+	});
+
+	connection.end();
+
+});
+
+//var express = require('express');
+//var app = express();
+
+//nodemon app.js
+
 app.use("/", express.static(__dirname));
 
 var server = app.listen(8081, function () {
@@ -73,4 +106,4 @@ var server = app.listen(8081, function () {
 	var port = "8081";
   console.log("Example app listening at http://%s:%s", host, port)
 
-})
+});
