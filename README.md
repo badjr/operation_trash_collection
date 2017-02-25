@@ -1,6 +1,6 @@
 # Operation Trash Collection
 
 ## Pre-requisites
-*node
-*npm
-*mysql
+* node
+* npm
+* mysql
