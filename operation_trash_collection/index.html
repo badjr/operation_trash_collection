@@ -34,6 +34,7 @@
         var infoWindow = new google.maps.InfoWindow({map: map});
 
         // Try HTML5 geolocation.
+	/*
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
             var pos = {
@@ -42,7 +43,6 @@
             };
 
             infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
             map.setCenter(pos);
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
@@ -51,6 +51,31 @@
           // Browser doesn't support Geolocation
           handleLocationError(false, infoWindow, map.getCenter());
         }
+	*/
+	/*
+	var trashReports = getTrashReports();
+	console.log(trashReports);
+	*/
+	/*
+	getJSON('localhost:8081/getTrashReports',
+		function(err, data) {
+		  if (err != null) {
+		    alert('Something went wrong: ' + err);
+		  } else {
+		    alert('Your query count: ' + data.query.count);
+		  }
+	});
+	*/
+	/*
+	var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
+	*/
+
+	
+
       }
 
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -59,6 +84,32 @@
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
       }
+/*
+	function getTrashReports() {
+		var xmlHttp = new XMLHttpRequest();
+		xmlHttp.open( "GET", "localhost:8081/getTrashReports", true ); // false for synchronous request
+		xmlHttp.onreadystatechange = function() { 
+		        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+		            callback(xmlHttp.responseText);
+		    }
+		xmlHttp.send( null );
+		return xmlHttp.responseText;
+	}
+	*/
+	var getJSON = function(url, callback) {
+    	var xhr = new XMLHttpRequest();
+	    xhr.open('GET', url, true);
+	    xhr.responseType = 'json';
+	    xhr.onload = function() {
+	   var status = xhr.status;
+	   if (status == 200) {
+        	callback(null, xhr.response);
+	      } else {
+	        callback(status);
+	      }
+    };
+    xhr.send();
+};
     </script>
     <script async defer 
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBynt9iySs_VTFTPdFYwwmiSEjUxfxkhuQ&callback=initMap">
