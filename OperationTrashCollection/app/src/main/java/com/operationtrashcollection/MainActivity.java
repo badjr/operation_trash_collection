@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
 
                     try {
                         //Connect
-                        httpcon = (HttpURLConnection) ((new URL("http://192.168.0.15:8081/reportTrash").openConnection()));
+                        httpcon = (HttpURLConnection) ((new URL("http://192.168.0.191:8081/reportTrash").openConnection()));
                         httpcon.setDoOutput(true);
                         httpcon.setRequestProperty("Content-Type", "application/json");
                         httpcon.setRequestProperty("Accept", "application/json");

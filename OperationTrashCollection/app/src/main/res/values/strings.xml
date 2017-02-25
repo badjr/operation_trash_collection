@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Operation Trash Collection</string>
+    <string name="station_text">Your Station:</string>
+    <string name="station">North Avenue</string>
+    <string name="trash_bin">Overflowing Trash Bin</string>
+    <string name="trash_ground">Trash on Ground</string>
 </resources>
